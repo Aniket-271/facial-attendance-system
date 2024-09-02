@@ -7,13 +7,8 @@ A Python-based facial recognition attendance system that uses OpenCV and the `fa
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Installation](#installation)
 - [Usage](#usage)
-- [Configuration](#configuration)
-- [Modules](#modules)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+
 
 ## Project Overview
 
