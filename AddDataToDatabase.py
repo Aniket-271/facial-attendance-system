@@ -40,17 +40,4 @@ data = {
             "year": 1,
             "last_attendance_time": "2024-07-11 00:54:34"
         },
-    "963852":
-        {
-            "name": "Elon Musk",
-            "major": "Physics",
-            "starting_year": 2020,
-            "total_attendance": 1,
-            "standing": "G",
-            "year": 2,
-            "last_attendance_time": "2024-07-09 00:54:34"
-        }
-}
-
-for key, value in data.items():
-    ref.child(key).set(value)
+   
