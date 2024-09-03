@@ -5,10 +5,7 @@ import cv2
 import face_recognition
 import cvzone
 import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import db
-from firebase_admin import storage
-from datetime import datetime
+
 
 cred = credentials.Certificate("serviceAccountKey.json")
 firebase_admin.initialize_app(cred, {
@@ -36,16 +33,6 @@ with open('EncodeFile.p', 'rb') as file:
 encodeListKnown, studentIds = encodeListKnownWithIds
 print("Encode File Loaded")
 
-modeType = 0
-counter = 0
-id = -1
-imgStudent = []
-
-while True:
-    success, img = cap.read()
-    if not success:
-        print("Failed to grab frame")
-        break
 
     imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
     imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
@@ -82,7 +69,7 @@ while True:
                 studentInfo = db.reference(f'Students/{id}').get()
                 print(studentInfo)
                 # Get the Image from the storage
-                blob = bucket.get_blob(f'Images/{id}.png')
+               
 
                 if blob:
                     array = np.frombuffer(blob.download_as_string(), np.uint8)
